@@ -4,13 +4,16 @@ A simple, maintainable Java tool for importing CSV files into PostgreSQL databas
 
 ## Features
 
+- **Multiple File Import**: Import multiple CSV files in batch via configuration list
 - **Simple CSV Import**: Automatically imports CSV files into database tables
 - **Table Name Mapping**: Table names automatically derived from CSV filenames (e.g., `employee.csv` → `employee` table)
 - **Configurable Date Formats**: Customize date parsing format via configuration file
 - **Type Detection**: Automatically handles different data types (integers, decimals, dates, strings)
 - **SQL Injection Protection**: Uses parameterized queries for security
 - **Database Abstraction**: Code designed to easily support other databases (Oracle) in the future
-- **Comprehensive Tests**: Full unit test coverage using PostgreSQL
+- **Comprehensive Logging**: SLF4J/Logback logging with file and console output
+- **Separated Configuration**: Database and application settings in separate files
+- **Comprehensive Tests**: Full unit test coverage using PostgreSQL (48+ tests)
 
 ## Tech Stack
 
@@ -18,7 +21,8 @@ A simple, maintainable Java tool for importing CSV files into PostgreSQL databas
 - **Build Tool**: Maven
 - **Database**: PostgreSQL (Oracle support planned)
 - **Testing**: JUnit 5
-- **Dependencies**: Minimal - PostgreSQL JDBC driver only
+- **Logging**: SLF4J 2.0.9 + Logback 1.4.11
+- **Dependencies**: Minimal - PostgreSQL JDBC driver, SLF4J/Logback
 
 ## Project Structure
 
@@ -27,19 +31,25 @@ csv-loader-aigen/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/csvloader/
-│   │   │   ├── CSVImporter.java          # Main import logic
-│   │   │   ├── CSVImporterApp.java       # CLI application
-│   │   │   ├── DatabaseConnection.java   # DB connection utility
-│   │   │   └── DateFormatConfig.java     # Date parsing utility
+│   │   │   ├── ApplicationConfig.java     # Application settings loader
+│   │   │   ├── CSVImporter.java           # Main import logic
+│   │   │   ├── CSVImporterApp.java        # CLI application
+│   │   │   ├── DatabaseConnection.java    # DB connection utility
+│   │   │   └── DateFormatConfig.java      # Date parsing utility
 │   │   └── resources/
-│   │       ├── database.properties       # DB configuration
-│   │       └── employee.csv              # Sample CSV file
+│   │       ├── application.properties     # App configuration
+│   │       ├── database.properties        # DB configuration
+│   │       ├── logback.xml                # Logging configuration
+│   │       └── employee.csv               # Sample CSV file
 │   └── test/
 │       ├── java/com/csvloader/
-│       │   ├── CSVImporterTest.java
-│       │   └── DatabaseConnectionTest.java
+│       │   ├── ApplicationConfigTest.java      # 29 tests
+│       │   ├── CSVImporterTest.java            # 12 tests
+│       │   └── DatabaseConnectionTest.java     # 7 tests
 │       └── resources/
-│           └── test-database.properties  # Test DB config
+│           ├── test-application.properties     # Test app config
+│           └── test-database.properties        # Test DB config
+├── logs/                                   # Generated log files
 ├── pom.xml
 └── README.md
 ```
@@ -81,21 +91,35 @@ csv-loader-aigen/
 
 ### Configuration
 
-Edit `src/main/resources/database.properties`:
+The application uses two separate configuration files for better organization:
 
+#### 1. Database Configuration (`src/main/resources/database.properties`)
 ```properties
-# Database Connection
+# Database Connection Configuration
 db.url=jdbc:postgresql://localhost:5432/yourdb
 db.username=postgres
 db.password=your_password
 db.driver=org.postgresql.Driver
+```
 
+#### 2. Application Configuration (`src/main/resources/application.properties`)
+```properties
 # Date format (Java SimpleDateFormat pattern)
+# Common patterns:
+# yyyy-MM-dd (e.g., 2024-01-15)
+# dd/MM/yyyy (e.g., 15/01/2024)
+# MM-dd-yyyy (e.g., 01-15-2024)
 date.format=yyyy-MM-dd
 
 # CSV configuration
 csv.delimiter=,
 csv.has.header=true
+
+# CSV files to import (comma-separated list)
+# Files must be present in src/main/resources directory
+# Table names will be derived from filenames (e.g., employee.csv -> employee table)
+# Example: csv.files=employee.csv,department.csv,salary.csv
+csv.files=employee.csv
 ```
 
 ## Building
@@ -111,7 +135,41 @@ This creates `target/csv-database-importer-1.0.0.jar`
 
 ### Running the Application
 
+The application supports two modes of operation:
+
+#### Mode 1: Import All Configured Files
 ```bash
+# Imports all files listed in application.properties (csv.files)
+java -jar target/csv-database-importer-1.0.0.jar
+```
+
+**Output:**
+```
+Date format configured as: yyyy-MM-dd
+Importing 3 file(s) from configuration:
+  - employee.csv
+  - department.csv
+  - salary.csv
+
+Importing: employee.csv
+  ✓ Imported 5 rows
+
+Importing: department.csv
+  ✓ Imported 3 rows
+
+Importing: salary.csv
+  ✓ Imported 8 rows
+
+========================================
+Import Summary:
+  Files processed: 3/3
+  Total rows imported: 16
+========================================
+```
+
+#### Mode 2: Import Specific File
+```bash
+# Imports only the specified file
 java -jar target/csv-database-importer-1.0.0.jar employee.csv
 ```
 
@@ -130,7 +188,7 @@ id,name,email,department,hire_date,salary
 
 ### Customizing Date Format
 
-To change date format, update `database.properties`:
+To change date format, update `application.properties`:
 
 ```properties
 # For DD/MM/YYYY format
@@ -141,6 +199,73 @@ date.format=MM-dd-yyyy
 ```
 
 Supported formats follow Java's SimpleDateFormat patterns.
+
+### Multiple File Import
+
+To import multiple CSV files in batch, configure them in `application.properties`:
+
+```properties
+# Comma-separated list of CSV files
+csv.files=employee.csv,department.csv,salary.csv,benefits.csv
+```
+
+Then run without arguments:
+```bash
+java -jar target/csv-database-importer-1.0.0.jar
+```
+
+All files will be imported sequentially with a summary report at the end.
+
+## Logging
+
+The application uses SLF4J with Logback for comprehensive logging.
+
+### Log Configuration
+
+Logging is configured in `src/main/resources/logback.xml`:
+- **Console Output**: Shows INFO level and above
+- **File Output**: `logs/csv-importer.log` (DEBUG level)
+- **Daily Rotation**: Log files rotate daily, keeping 30 days of history
+
+### Log Levels
+
+```xml
+<!-- Application logs (DEBUG level) -->
+<logger name="com.csvloader" level="DEBUG" />
+
+<!-- Third-party libraries (WARN level) -->
+<root level="WARN" />
+```
+
+### Viewing Logs
+
+**Console output** during execution:
+```
+2025-10-20 23:30:15.123 [main] INFO  com.csvloader.CSVImporterApp - ========== CSV Database Importer Starting ==========
+2025-10-20 23:30:15.234 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:30:15.345 [main] INFO  com.csvloader.CSVImporter - Date format configured as: yyyy-MM-dd
+2025-10-20 23:30:15.456 [main] INFO  com.csvloader.CSVImporterApp - Starting import of file: employee.csv
+2025-10-20 23:30:15.567 [main] INFO  com.csvloader.CSVImporterApp - Successfully imported 5 rows from employee.csv
+```
+
+**Log file** (`logs/csv-importer.log`):
+```bash
+tail -f logs/csv-importer.log
+```
+
+### Customizing Logging
+
+To change log level, edit `logback.xml`:
+```xml
+<!-- More verbose logging (DEBUG) -->
+<logger name="com.csvloader" level="DEBUG" />
+
+<!-- Less verbose logging (INFO) -->
+<logger name="com.csvloader" level="INFO" />
+
+<!-- Minimal logging (WARN) -->
+<logger name="com.csvloader" level="WARN" />
+```
 
 ## Running Tests
 
@@ -156,13 +281,27 @@ Supported formats follow Java's SimpleDateFormat patterns.
 ### Run Tests
 
 ```bash
+# Run all tests
 mvn test
+
+# Run specific test class
+mvn test -Dtest=ApplicationConfigTest
+
+# Run with detailed output
+mvn test -X
 ```
+
+**Test Coverage:**
+- **ApplicationConfigTest**: 29 tests for configuration loading and parsing
+- **DatabaseConnectionTest**: 7 tests for database connectivity
+- **CSVImporterTest**: 12 tests for CSV import functionality
+- **Total**: 48+ comprehensive tests
 
 Tests automatically:
 - Create the `employee` table
-- Run all test cases
+- Run all test cases with detailed logging
 - Clean up after completion
+- Generate logs in `logs/test-execution.log`
 
 ## Supported Data Types
 
@@ -185,13 +324,22 @@ The application provides clear error messages for:
 - Invalid number formats
 - Missing database tables or columns
 
+## Recent Updates
+
+### Version 1.0.0 Features:
+- ✅ **Multiple File Import**: Batch import via comma-separated configuration
+- ✅ **Comprehensive Logging**: SLF4J/Logback with file and console output
+- ✅ **Separated Configuration**: Database and application settings in separate files
+- ✅ **48+ Unit Tests**: Full test coverage for all components
+- ✅ **Custom Agents**: `java-unit-test-generator` agent for automated test generation
+
 ## Future Enhancements
 
 - **Oracle Support**: Code is abstracted to easily add Oracle driver
 - **Multiple Date Formats**: Support different formats per column
-- **Batch Processing**: Import multiple CSV files at once
 - **Progress Indicators**: Show import progress for large files
 - **Validation Mode**: Dry-run to validate CSV before import
+- **Transaction Support**: Rollback on failure for multi-file imports
 
 ## Adding Oracle Support
 
@@ -229,6 +377,43 @@ To add Oracle support in the future:
 - Ensure CSV headers match database column names exactly
 - Column names are case-sensitive
 
+## Quick Reference
+
+### Common Commands
+```bash
+# Build project
+mvn clean package
+
+# Run with all configured files
+java -jar target/csv-database-importer-1.0.0.jar
+
+# Run with specific file
+java -jar target/csv-database-importer-1.0.0.jar employee.csv
+
+# Run tests
+mvn test
+
+# View logs
+tail -f logs/csv-importer.log
+```
+
+### File Locations
+- **Database Config**: `src/main/resources/database.properties`
+- **App Config**: `src/main/resources/application.properties`
+- **CSV Files**: `src/main/resources/*.csv`
+- **Logs**: `logs/csv-importer.log`
+- **Tests**: `src/test/java/com/csvloader/`
+
+### Configuration Keys
+| Key | Location | Description | Default |
+|-----|----------|-------------|---------|
+| `db.url` | database.properties | Database JDBC URL | - |
+| `db.username` | database.properties | Database username | - |
+| `db.password` | database.properties | Database password | - |
+| `date.format` | application.properties | Date format pattern | yyyy-MM-dd |
+| `csv.delimiter` | application.properties | CSV delimiter | , |
+| `csv.files` | application.properties | Files to import | employee.csv |
+
 ## Contributing
 
 This codebase is designed for junior developers. Key principles:
@@ -237,6 +422,8 @@ This codebase is designed for junior developers. Key principles:
 - **Clear naming**: Variables and methods self-document
 - **Comments**: Explain "why", not "what"
 - **No complex libraries**: Use Java standard library when possible
+- **Comprehensive logging**: Use SLF4J for all logging
+- **Full test coverage**: Write tests for all new features
 
 ## License
 
