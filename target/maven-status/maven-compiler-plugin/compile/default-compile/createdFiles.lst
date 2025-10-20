@@ -1,4 +1,5 @@
+com/csvloader/ApplicationConfig.class
+com/csvloader/CSVImporterApp.class
 com/csvloader/DatabaseConnection.class
 com/csvloader/CSVImporter.class
 com/csvloader/DateFormatConfig.class
-com/csvloader/CSVImporterApp.class

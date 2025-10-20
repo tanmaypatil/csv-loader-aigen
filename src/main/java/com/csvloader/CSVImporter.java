@@ -24,23 +24,40 @@ public class CSVImporter {
     private static final Logger logger = LoggerFactory.getLogger(CSVImporter.class);
 
     private final DatabaseConnection dbConnection;
+    private final ApplicationConfig appConfig;
     private final DateFormatConfig dateConfig;
     private final String delimiter;
 
     /**
-     * Creates a CSVImporter with database connection.
+     * Creates a CSVImporter with database connection and application configuration.
      * @param dbConnection database connection utility
+     * @param appConfig application configuration
      * @throws IOException if configuration cannot be loaded
      */
-    public CSVImporter(DatabaseConnection dbConnection) throws IOException {
+    public CSVImporter(DatabaseConnection dbConnection, ApplicationConfig appConfig) throws IOException {
+        logger.debug("Initializing CSVImporter");
         this.dbConnection = dbConnection;
+        this.appConfig = appConfig;
 
         // Load date format from configuration
-        String datePattern = dbConnection.getProperty("date.format", "yyyy-MM-dd");
+        String datePattern = appConfig.getDateFormat();
         this.dateConfig = new DateFormatConfig(datePattern);
+        logger.info("Date format configured as: {}", datePattern);
 
         // Load CSV delimiter from configuration
-        this.delimiter = dbConnection.getProperty("csv.delimiter", ",");
+        this.delimiter = appConfig.getCsvDelimiter();
+        logger.debug("CSV delimiter configured as: '{}'", delimiter);
+    }
+
+    /**
+     * Creates a CSVImporter with database connection (uses default ApplicationConfig).
+     * @param dbConnection database connection utility
+     * @throws IOException if configuration cannot be loaded
+     * @deprecated Use {@link #CSVImporter(DatabaseConnection, ApplicationConfig)} instead
+     */
+    @Deprecated
+    public CSVImporter(DatabaseConnection dbConnection) throws IOException {
+        this(dbConnection, new ApplicationConfig());
     }
 
     /**

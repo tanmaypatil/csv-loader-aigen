@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.csvloader.CSVImporterTest" time="0.333" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.csvloader.CSVImporterTest" time="0.337" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251020223744635_3.jar /Users/tanmaypatil/csv-loader-aigen/target/surefire 2025-10-20T22-37-44_203-jvmRun1 surefire-20251020223744635_1tmp surefire_0-20251020223744635_2tmp"/>
+    <property name="sun.java.command" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251020233533081_3.jar /Users/tanmaypatil/csv-loader-aigen/target/surefire 2025-10-20T23-35-33_054-jvmRun1 surefire-20251020233533081_1tmp surefire_0-20251020233533081_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/tanmaypatil/csv-loader-aigen/target/test-classes:/Users/tanmaypatil/csv-loader-aigen/target/classes:/Users/tanmaypatil/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/Users/tanmaypatil/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/tanmaypatil/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/tanmaypatil/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/tanmaypatil/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/tanmaypatil/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/tanmaypatil/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/tanmaypatil/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/tanmaypatil/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/tanmaypatil/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/tanmaypatil/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/tanmaypatil/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251020223744635_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251020233533081_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="25"/>
@@ -60,174 +60,181 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testImportCSVFromFile" classname="com.csvloader.CSVImporterTest" time="0.051">
-    <system-out><![CDATA[2025-10-20 22:37:44.888 [main] INFO  com.csvloader.CSVImporterTest - ========== CSVImporterTest - BeforeAll Setup ==========
-2025-10-20 22:37:44.889 [main] INFO  com.csvloader.CSVImporterTest - Test properties loaded successfully
-2025-10-20 22:37:44.889 [main] INFO  com.csvloader.CSVImporterTest - Initializing database connection and CSV importer
-2025-10-20 22:37:44.889 [main] INFO  com.csvloader.CSVImporterTest - Creating test table 'employee'
-2025-10-20 22:37:44.889 [main] DEBUG com.csvloader.CSVImporterTest - Creating employee table
-2025-10-20 22:37:44.889 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:44.890 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:44.918 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:44.919 [main] DEBUG com.csvloader.CSVImporterTest - Dropping existing employee table if it exists
-2025-10-20 22:37:44.927 [main] DEBUG com.csvloader.CSVImporterTest - Employee table created successfully
-2025-10-20 22:37:44.928 [main] INFO  com.csvloader.CSVImporterTest - Test setup completed successfully
-2025-10-20 22:37:44.931 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:44.931 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:44.931 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:44.936 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:44.937 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
-2025-10-20 22:37:44.938 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromFile - Starting
-2025-10-20 22:37:44.938 [main] DEBUG com.csvloader.CSVImporterTest - Importing employee.csv file
-2025-10-20 22:37:44.938 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:44.938 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:44.942 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:44.974 [main] INFO  com.csvloader.CSVImporterTest - Imported 5 rows from CSV file
-2025-10-20 22:37:44.975 [main] DEBUG com.csvloader.CSVImporterTest - Verifying data in database
-2025-10-20 22:37:44.975 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:44.975 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:44.978 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:44.979 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromFile - PASSED
+  <testcase name="testImportCSVFromFile" classname="com.csvloader.CSVImporterTest" time="0.055">
+    <system-out><![CDATA[2025-10-20 23:35:33.327 [main] INFO  com.csvloader.CSVImporterTest - ========== CSVImporterTest - BeforeAll Setup ==========
+2025-10-20 23:35:33.327 [main] INFO  com.csvloader.CSVImporterTest - Test properties loaded successfully
+2025-10-20 23:35:33.327 [main] INFO  com.csvloader.CSVImporterTest - Initializing database connection and CSV importer
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-20 23:35:33.328 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.CSVImporter - Initializing CSVImporter
+2025-10-20 23:35:33.328 [main] INFO  com.csvloader.CSVImporter - Date format configured as: yyyy-MM-dd
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.CSVImporter - CSV delimiter configured as: ','
+2025-10-20 23:35:33.328 [main] INFO  com.csvloader.CSVImporterTest - Creating test table 'employee'
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.CSVImporterTest - Creating employee table
+2025-10-20 23:35:33.328 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.329 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.357 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.358 [main] DEBUG com.csvloader.CSVImporterTest - Dropping existing employee table if it exists
+2025-10-20 23:35:33.366 [main] DEBUG com.csvloader.CSVImporterTest - Employee table created successfully
+2025-10-20 23:35:33.367 [main] INFO  com.csvloader.CSVImporterTest - Test setup completed successfully
+2025-10-20 23:35:33.370 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.370 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.370 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.374 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.375 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+2025-10-20 23:35:33.375 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromFile - Starting
+2025-10-20 23:35:33.375 [main] DEBUG com.csvloader.CSVImporterTest - Importing employee.csv file
+2025-10-20 23:35:33.375 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.375 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.381 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.415 [main] INFO  com.csvloader.CSVImporterTest - Imported 5 rows from CSV file
+2025-10-20 23:35:33.416 [main] DEBUG com.csvloader.CSVImporterTest - Verifying data in database
+2025-10-20 23:35:33.416 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.416 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.421 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.422 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromFile - PASSED
 ]]></system-out>
   </testcase>
-  <testcase name="testImportCSVFromInputStream" classname="com.csvloader.CSVImporterTest" time="0.032">
-    <system-out><![CDATA[2025-10-20 22:37:44.982 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:44.982 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:44.982 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:44.985 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:44.986 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 5 rows from employee table
-2025-10-20 22:37:44.986 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromInputStream - Starting
-2025-10-20 22:37:44.986 [main] DEBUG com.csvloader.CSVImporterTest - Importing CSV from InputStream
-2025-10-20 22:37:44.986 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:44.986 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:44.989 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.007 [main] INFO  com.csvloader.CSVImporterTest - Imported 1 rows from InputStream
-2025-10-20 22:37:45.007 [main] DEBUG com.csvloader.CSVImporterTest - Verifying imported data for id=10
-2025-10-20 22:37:45.007 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.007 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.012 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.013 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromInputStream - PASSED
+  <testcase name="testImportCSVFromInputStream" classname="com.csvloader.CSVImporterTest" time="0.033">
+    <system-out><![CDATA[2025-10-20 23:35:33.425 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.425 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.425 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.428 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.428 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 5 rows from employee table
+2025-10-20 23:35:33.428 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromInputStream - Starting
+2025-10-20 23:35:33.429 [main] DEBUG com.csvloader.CSVImporterTest - Importing CSV from InputStream
+2025-10-20 23:35:33.429 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.429 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.431 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.452 [main] INFO  com.csvloader.CSVImporterTest - Imported 1 rows from InputStream
+2025-10-20 23:35:33.452 [main] DEBUG com.csvloader.CSVImporterTest - Verifying imported data for id=10
+2025-10-20 23:35:33.452 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.452 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.456 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.457 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportCSVFromInputStream - PASSED
 ]]></system-out>
   </testcase>
-  <testcase name="testImportWithDateFormats" classname="com.csvloader.CSVImporterTest" time="0.029">
-    <system-out><![CDATA[2025-10-20 22:37:45.013 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.014 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.014 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.016 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.017 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 1 rows from employee table
-2025-10-20 22:37:45.017 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportWithDateFormats - Starting
-2025-10-20 22:37:45.017 [main] DEBUG com.csvloader.CSVImporterTest - Importing CSV with date values
-2025-10-20 22:37:45.017 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.017 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.020 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.036 [main] INFO  com.csvloader.CSVImporterTest - Imported 2 records with dates
-2025-10-20 22:37:45.036 [main] DEBUG com.csvloader.CSVImporterTest - Verifying date parsing
-2025-10-20 22:37:45.036 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.037 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.040 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.041 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportWithDateFormats - PASSED
+  <testcase name="testImportWithDateFormats" classname="com.csvloader.CSVImporterTest" time="0.032">
+    <system-out><![CDATA[2025-10-20 23:35:33.457 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.458 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.458 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.461 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.462 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 1 rows from employee table
+2025-10-20 23:35:33.462 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportWithDateFormats - Starting
+2025-10-20 23:35:33.462 [main] DEBUG com.csvloader.CSVImporterTest - Importing CSV with date values
+2025-10-20 23:35:33.462 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.462 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.465 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.483 [main] INFO  com.csvloader.CSVImporterTest - Imported 2 records with dates
+2025-10-20 23:35:33.483 [main] DEBUG com.csvloader.CSVImporterTest - Verifying date parsing
+2025-10-20 23:35:33.483 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.483 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.487 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.488 [main] INFO  com.csvloader.CSVImporterTest - TEST: testImportWithDateFormats - PASSED
 ]]></system-out>
   </testcase>
-  <testcase name="testImportWithNullValues" classname="com.csvloader.CSVImporterTest" time="0.021">
-    <system-out><![CDATA[2025-10-20 22:37:45.042 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.042 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.042 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.045 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.046 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 2 rows from employee table
-2025-10-20 22:37:45.046 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.046 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.049 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.060 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.060 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.062 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+  <testcase name="testImportWithNullValues" classname="com.csvloader.CSVImporterTest" time="0.025">
+    <system-out><![CDATA[2025-10-20 23:35:33.489 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.489 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.489 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.492 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.493 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 2 rows from employee table
+2025-10-20 23:35:33.493 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.493 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.496 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.511 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.511 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.513 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
-  <testcase name="testImportWithVariousDataTypes" classname="com.csvloader.CSVImporterTest" time="0.021">
-    <system-out><![CDATA[2025-10-20 22:37:45.064 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.064 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.064 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.066 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.067 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 1 rows from employee table
-2025-10-20 22:37:45.067 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.067 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.070 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.081 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.081 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.083 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+  <testcase name="testImportWithVariousDataTypes" classname="com.csvloader.CSVImporterTest" time="0.015">
+    <system-out><![CDATA[2025-10-20 23:35:33.515 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.515 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.515 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.517 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.517 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 1 rows from employee table
+2025-10-20 23:35:33.517 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.517 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.519 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.528 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.528 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.530 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
-  <testcase name="testImportEmptyCSV" classname="com.csvloader.CSVImporterTest" time="0.012">
-    <system-out><![CDATA[2025-10-20 22:37:45.084 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.084 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.084 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.086 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.087 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 1 rows from employee table
-2025-10-20 22:37:45.087 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.088 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.089 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+  <testcase name="testImportEmptyCSV" classname="com.csvloader.CSVImporterTest" time="0.015">
+    <system-out><![CDATA[2025-10-20 23:35:33.531 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.531 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.531 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.534 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.534 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 1 rows from employee table
+2025-10-20 23:35:33.537 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.537 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.539 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
   <testcase name="testImportCSVWithMismatchedColumns" classname="com.csvloader.CSVImporterTest" time="0.012">
-    <system-out><![CDATA[2025-10-20 22:37:45.097 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.097 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.097 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.099 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.100 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
-2025-10-20 22:37:45.100 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.100 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.102 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+    <system-out><![CDATA[2025-10-20 23:35:33.546 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.547 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.547 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.548 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.549 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+2025-10-20 23:35:33.549 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.549 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.551 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
-  <testcase name="testImportCSVWithInvalidDate" classname="com.csvloader.CSVImporterTest" time="0.012">
-    <system-out><![CDATA[2025-10-20 22:37:45.109 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.109 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.109 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.111 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.111 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
-2025-10-20 22:37:45.112 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.112 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.114 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+  <testcase name="testImportCSVWithInvalidDate" classname="com.csvloader.CSVImporterTest" time="0.011">
+    <system-out><![CDATA[2025-10-20 23:35:33.558 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.558 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.558 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.560 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.561 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+2025-10-20 23:35:33.561 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.561 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.562 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
-  <testcase name="testImportCSVWithInvalidNumber" classname="com.csvloader.CSVImporterTest" time="0.012">
-    <system-out><![CDATA[2025-10-20 22:37:45.121 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.121 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.121 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.123 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.124 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
-2025-10-20 22:37:45.124 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.124 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.126 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+  <testcase name="testImportCSVWithInvalidNumber" classname="com.csvloader.CSVImporterTest" time="0.01">
+    <system-out><![CDATA[2025-10-20 23:35:33.570 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.570 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.570 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.572 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.572 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+2025-10-20 23:35:33.572 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.572 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.574 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
-  <testcase name="testImportNonExistentFile" classname="com.csvloader.CSVImporterTest" time="0.004">
-    <system-out><![CDATA[2025-10-20 22:37:45.135 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.135 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.135 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.137 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.138 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+  <testcase name="testImportNonExistentFile" classname="com.csvloader.CSVImporterTest" time="0.002">
+    <system-out><![CDATA[2025-10-20 23:35:33.581 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.581 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.581 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.583 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.583 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
 ]]></system-out>
   </testcase>
   <testcase name="testGetDatePattern" classname="com.csvloader.CSVImporterTest" time="0.002">
-    <system-out><![CDATA[2025-10-20 22:37:45.139 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.139 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.139 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.141 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.141 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+    <system-out><![CDATA[2025-10-20 23:35:33.584 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.584 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.584 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.586 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.586 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
 ]]></system-out>
   </testcase>
-  <testcase name="testImportMultipleRows" classname="com.csvloader.CSVImporterTest" time="0.013">
-    <system-out><![CDATA[2025-10-20 22:37:45.142 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
-2025-10-20 22:37:45.142 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.142 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.143 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.144 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
-2025-10-20 22:37:45.144 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.144 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.146 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
-2025-10-20 22:37:45.153 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
-2025-10-20 22:37:45.153 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
-2025-10-20 22:37:45.155 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+  <testcase name="testImportMultipleRows" classname="com.csvloader.CSVImporterTest" time="0.014">
+    <system-out><![CDATA[2025-10-20 23:35:33.587 [main] DEBUG com.csvloader.CSVImporterTest - BeforeEach - Clearing test data from employee table
+2025-10-20 23:35:33.587 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.587 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.588 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.588 [main] DEBUG com.csvloader.CSVImporterTest - Deleted 0 rows from employee table
+2025-10-20 23:35:33.589 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.589 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.590 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
+2025-10-20 23:35:33.597 [main] DEBUG com.csvloader.DatabaseConnection - Attempting to establish database connection to: jdbc:postgresql://localhost:5432/employee
+2025-10-20 23:35:33.597 [main] DEBUG com.csvloader.DatabaseConnection - Loading database driver: org.postgresql.Driver
+2025-10-20 23:35:33.599 [main] INFO  com.csvloader.DatabaseConnection - Database connection established successfully
 ]]></system-out>
   </testcase>
 </testsuite>
