@@ -610,4 +610,222 @@ class ApplicationConfigTest {
 
         logger.info("Test completed: testGetCsvFiles_leadingComma");
     }
+
+    @Test
+    void testGetExportEnabled_defaultFalse() {
+        logger.info("Starting test: testGetExportEnabled_defaultFalse");
+
+        // Arrange: Create config without export.enabled property
+        Properties emptyProps = new Properties();
+        ApplicationConfig config = new ApplicationConfig(emptyProps);
+
+        // Act
+        boolean enabled = config.getExportEnabled();
+        logger.debug("Verifying default export enabled: {}", enabled);
+
+        // Assert
+        assertFalse(enabled, "Export should be disabled by default");
+
+        logger.info("Test completed: testGetExportEnabled_defaultFalse");
+    }
+
+    @Test
+    void testGetExportEnabled_true() {
+        logger.info("Starting test: testGetExportEnabled_true");
+
+        // Arrange: Create config with export enabled
+        Properties customProps = new Properties();
+        customProps.setProperty("export.enabled", "true");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        boolean enabled = config.getExportEnabled();
+        logger.debug("Verifying export enabled: {}", enabled);
+
+        // Assert
+        assertTrue(enabled, "Export should be enabled when configured as true");
+
+        logger.info("Test completed: testGetExportEnabled_true");
+    }
+
+    @Test
+    void testGetExportEnabled_false() {
+        logger.info("Starting test: testGetExportEnabled_false");
+
+        // Arrange: Create config with export explicitly disabled
+        Properties customProps = new Properties();
+        customProps.setProperty("export.enabled", "false");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        boolean enabled = config.getExportEnabled();
+        logger.debug("Verifying export disabled: {}", enabled);
+
+        // Assert
+        assertFalse(enabled, "Export should be disabled when configured as false");
+
+        logger.info("Test completed: testGetExportEnabled_false");
+    }
+
+    @Test
+    void testGetExportTables_singleTable() {
+        logger.info("Starting test: testGetExportTables_singleTable");
+
+        // Arrange: Create config with single table
+        Properties customProps = new Properties();
+        customProps.setProperty("export.tables", "employee");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        List<String> tables = config.getExportTables();
+        logger.debug("Verifying export tables list: {}", tables);
+
+        // Assert
+        assertNotNull(tables, "Export tables list should not be null");
+        assertEquals(1, tables.size(), "Should have 1 table");
+        assertEquals("employee", tables.get(0), "Should contain employee table");
+
+        logger.info("Test completed: testGetExportTables_singleTable");
+    }
+
+    @Test
+    void testGetExportTables_multipleTables() {
+        logger.info("Starting test: testGetExportTables_multipleTables");
+
+        // Arrange: Create config with multiple tables
+        Properties customProps = new Properties();
+        customProps.setProperty("export.tables", "employee,department,project");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        List<String> tables = config.getExportTables();
+        logger.debug("Verifying multiple export tables: {}", tables);
+
+        // Assert
+        assertNotNull(tables, "Export tables list should not be null");
+        assertEquals(3, tables.size(), "Should have 3 tables");
+        assertEquals("employee", tables.get(0));
+        assertEquals("department", tables.get(1));
+        assertEquals("project", tables.get(2));
+
+        logger.info("Test completed: testGetExportTables_multipleTables");
+    }
+
+    @Test
+    void testGetExportTables_withWhitespace() {
+        logger.info("Starting test: testGetExportTables_withWhitespace");
+
+        // Arrange: Create config with whitespace around table names
+        Properties customProps = new Properties();
+        customProps.setProperty("export.tables", "  employee  ,  department  ,  project  ");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        List<String> tables = config.getExportTables();
+        logger.debug("Verifying export tables with trimmed whitespace: {}", tables);
+
+        // Assert
+        assertEquals(3, tables.size(), "Should have 3 tables");
+        assertEquals("employee", tables.get(0), "Whitespace should be trimmed");
+        assertEquals("department", tables.get(1), "Whitespace should be trimmed");
+        assertEquals("project", tables.get(2), "Whitespace should be trimmed");
+
+        logger.info("Test completed: testGetExportTables_withWhitespace");
+    }
+
+    @Test
+    void testGetExportTables_emptyString() {
+        logger.info("Starting test: testGetExportTables_emptyString");
+
+        // Arrange: Create config with empty export.tables property
+        Properties customProps = new Properties();
+        customProps.setProperty("export.tables", "");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        List<String> tables = config.getExportTables();
+        logger.debug("Verifying empty export tables list: {}", tables);
+
+        // Assert
+        assertNotNull(tables, "Export tables list should not be null");
+        assertTrue(tables.isEmpty(), "Export tables list should be empty");
+
+        logger.info("Test completed: testGetExportTables_emptyString");
+    }
+
+    @Test
+    void testGetExportTables_notConfigured() {
+        logger.info("Starting test: testGetExportTables_notConfigured");
+
+        // Arrange: Create config without export.tables property
+        Properties emptyProps = new Properties();
+        ApplicationConfig config = new ApplicationConfig(emptyProps);
+
+        // Act
+        List<String> tables = config.getExportTables();
+        logger.debug("Verifying unconfigured export tables list: {}", tables);
+
+        // Assert
+        assertNotNull(tables, "Export tables list should not be null");
+        assertTrue(tables.isEmpty(), "Export tables list should be empty when not configured");
+
+        logger.info("Test completed: testGetExportTables_notConfigured");
+    }
+
+    @Test
+    void testGetExportOutputDir_default() {
+        logger.info("Starting test: testGetExportOutputDir_default");
+
+        // Arrange: Create config without export.output.dir property
+        Properties emptyProps = new Properties();
+        ApplicationConfig config = new ApplicationConfig(emptyProps);
+
+        // Act
+        String outputDir = config.getExportOutputDir();
+        logger.debug("Verifying default export output directory: {}", outputDir);
+
+        // Assert
+        assertNotNull(outputDir, "Export output directory should not be null");
+        assertEquals("src/main/resources/exported-csv", outputDir, "Should use default output directory");
+
+        logger.info("Test completed: testGetExportOutputDir_default");
+    }
+
+    @Test
+    void testGetExportOutputDir_custom() {
+        logger.info("Starting test: testGetExportOutputDir_custom");
+
+        // Arrange: Create config with custom output directory
+        Properties customProps = new Properties();
+        customProps.setProperty("export.output.dir", "/custom/path/to/exports");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act
+        String outputDir = config.getExportOutputDir();
+        logger.debug("Verifying custom export output directory: {}", outputDir);
+
+        // Assert
+        assertEquals("/custom/path/to/exports", outputDir, "Should use custom output directory");
+
+        logger.info("Test completed: testGetExportOutputDir_custom");
+    }
+
+    @Test
+    void testExportConfiguration_complete() {
+        logger.info("Starting test: testExportConfiguration_complete");
+
+        // Arrange: Create config with complete export configuration
+        Properties customProps = new Properties();
+        customProps.setProperty("export.enabled", "true");
+        customProps.setProperty("export.tables", "employee,department,project");
+        customProps.setProperty("export.output.dir", "target/exported-csv");
+        ApplicationConfig config = new ApplicationConfig(customProps);
+
+        // Act & Assert
+        assertTrue(config.getExportEnabled(), "Export should be enabled");
+        assertEquals(3, config.getExportTables().size(), "Should have 3 tables");
+        assertEquals("target/exported-csv", config.getExportOutputDir(), "Should use configured output directory");
+
+        logger.info("Test completed: testExportConfiguration_complete");
+    }
 }

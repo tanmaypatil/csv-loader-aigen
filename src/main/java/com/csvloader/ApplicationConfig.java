@@ -117,4 +117,41 @@ public class ApplicationConfig {
     public String getProperty(String key, String defaultValue) {
         return properties.getProperty(key, defaultValue);
     }
+
+    /**
+     * Gets whether CSV export is enabled.
+     * @return true if export is enabled
+     */
+    public boolean getExportEnabled() {
+        return Boolean.parseBoolean(properties.getProperty("export.enabled", "false"));
+    }
+
+    /**
+     * Gets the list of tables to export headers for.
+     * @return list of table names
+     */
+    public List<String> getExportTables() {
+        String tablesProperty = properties.getProperty("export.tables", "");
+        if (tablesProperty == null || tablesProperty.trim().isEmpty()) {
+            logger.debug("No tables configured for export in export.tables property");
+            return new ArrayList<>();
+        }
+
+        // Split by comma and trim whitespace
+        List<String> tables = Arrays.stream(tablesProperty.split(","))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .toList();
+
+        logger.debug("Configured export tables: {}", tables);
+        return tables;
+    }
+
+    /**
+     * Gets the output directory for exported CSV files.
+     * @return output directory path
+     */
+    public String getExportOutputDir() {
+        return properties.getProperty("export.output.dir", "src/main/resources/exported-csv");
+    }
 }
