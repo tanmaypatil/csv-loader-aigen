@@ -5,6 +5,7 @@ A simple, maintainable Java tool for importing CSV files into PostgreSQL databas
 ## Features
 
 - **Multiple File Import**: Import multiple CSV files in batch via configuration list
+- **CSV Export**: Generate CSV template files from database table schemas with column headers only
 - **Simple CSV Import**: Automatically imports CSV files into database tables
 - **Table Name Mapping**: Table names automatically derived from CSV filenames (e.g., `employee.csv` → `employee` table)
 - **Configurable Date Formats**: Customize date parsing format via configuration file
@@ -13,7 +14,7 @@ A simple, maintainable Java tool for importing CSV files into PostgreSQL databas
 - **Database Abstraction**: Code designed to easily support other databases (Oracle) in the future
 - **Comprehensive Logging**: SLF4J/Logback logging with file and console output
 - **Separated Configuration**: Database and application settings in separate files
-- **Comprehensive Tests**: Full unit test coverage using PostgreSQL (48+ tests)
+- **Comprehensive Tests**: Full unit test coverage using PostgreSQL (58+ tests)
 
 ## Tech Stack
 
@@ -32,6 +33,7 @@ csv-loader-aigen/
 │   ├── main/
 │   │   ├── java/com/csvloader/
 │   │   │   ├── ApplicationConfig.java     # Application settings loader
+│   │   │   ├── CSVExporter.java           # CSV export logic
 │   │   │   ├── CSVImporter.java           # Main import logic
 │   │   │   ├── CSVImporterApp.java        # CLI application
 │   │   │   ├── DatabaseConnection.java    # DB connection utility
@@ -40,10 +42,12 @@ csv-loader-aigen/
 │   │       ├── application.properties     # App configuration
 │   │       ├── database.properties        # DB configuration
 │   │       ├── logback.xml                # Logging configuration
-│   │       └── employee.csv               # Sample CSV file
+│   │       ├── employee.csv               # Sample CSV file
+│   │       └── exported-csv/              # Generated CSV templates
 │   └── test/
 │       ├── java/com/csvloader/
-│       │   ├── ApplicationConfigTest.java      # 29 tests
+│       │   ├── ApplicationConfigTest.java      # 40 tests
+│       │   ├── CSVExporterTest.java            # 10 tests
 │       │   ├── CSVImporterTest.java            # 12 tests
 │       │   └── DatabaseConnectionTest.java     # 7 tests
 │       └── resources/
@@ -120,6 +124,19 @@ csv.has.header=true
 # Table names will be derived from filenames (e.g., employee.csv -> employee table)
 # Example: csv.files=employee.csv,department.csv,salary.csv
 csv.files=employee.csv
+
+# CSV Export configuration
+# Enable export of table headers to CSV files
+export.enabled=false
+
+# Tables to export headers for (comma-separated list)
+# CSV files will be generated with column names as first row only
+# Example: export.tables=employee,department,projects
+export.tables=
+
+# Output directory for exported CSV files (relative to project root)
+# Directory will be created if it doesn't exist
+export.output.dir=src/main/resources/exported-csv
 ```
 
 ## Building
@@ -216,6 +233,82 @@ java -jar target/csv-database-importer-1.0.0.jar
 
 All files will be imported sequentially with a summary report at the end.
 
+### CSV Export (Generate Templates from Database Tables)
+
+The application can export database table schemas to CSV files containing only column headers. This is useful for:
+- Creating CSV templates for data entry
+- Documenting table structures
+- Preparing files for external data population
+
+#### Enable Export
+
+Update `application.properties`:
+
+```properties
+# Enable export feature
+export.enabled=true
+
+# Specify tables to export (comma-separated)
+export.tables=employee,department,projects
+
+# Output directory (will be created if it doesn't exist)
+export.output.dir=src/main/resources/exported-csv
+```
+
+#### Run Export
+
+When export is enabled, the application will automatically export table headers after completing any import operations:
+
+```bash
+java -jar target/csv-database-importer-1.0.0.jar
+```
+
+**Output:**
+```
+========================================
+CSV Export:
+========================================
+Exporting headers for 3 table(s):
+  - employee
+  - department
+  - projects
+Output directory: src/main/resources/exported-csv
+
+Export Summary:
+  Tables exported: 3/3
+  Output location: src/main/resources/exported-csv
+========================================
+```
+
+#### Generated CSV Files
+
+Each table generates a CSV file with only the column headers:
+
+**employee.csv:**
+```csv
+id,name,email,department,hire_date,salary
+```
+
+**department.csv:**
+```csv
+dept_id,dept_name,location
+```
+
+**projects.csv:**
+```csv
+project_id,project_name,start_date,budget
+```
+
+You can then populate these files with data and import them back into the database.
+
+#### Export Features
+
+- **Automatic directory creation**: Output directory is created if it doesn't exist
+- **Column order preservation**: Columns exported in database table order
+- **Configurable delimiter**: Uses the same `csv.delimiter` setting as import
+- **Error handling**: Invalid tables are logged and skipped, valid tables still export
+- **Batch processing**: Export multiple tables in one operation
+
 ## Logging
 
 The application uses SLF4J with Logback for comprehensive logging.
@@ -292,10 +385,11 @@ mvn test -X
 ```
 
 **Test Coverage:**
-- **ApplicationConfigTest**: 29 tests for configuration loading and parsing
+- **ApplicationConfigTest**: 40 tests for configuration loading and parsing (including export config)
 - **DatabaseConnectionTest**: 7 tests for database connectivity
 - **CSVImporterTest**: 12 tests for CSV import functionality
-- **Total**: 48+ comprehensive tests
+- **CSVExporterTest**: 10 tests for CSV export functionality
+- **Total**: 69+ comprehensive tests
 
 Tests automatically:
 - Create the `employee` table
@@ -327,10 +421,11 @@ The application provides clear error messages for:
 ## Recent Updates
 
 ### Version 1.0.0 Features:
+- ✅ **CSV Export**: Generate CSV template files from database table schemas
 - ✅ **Multiple File Import**: Batch import via comma-separated configuration
 - ✅ **Comprehensive Logging**: SLF4J/Logback with file and console output
 - ✅ **Separated Configuration**: Database and application settings in separate files
-- ✅ **48+ Unit Tests**: Full test coverage for all components
+- ✅ **69+ Unit Tests**: Full test coverage for all components including export
 - ✅ **Custom Agents**: `java-unit-test-generator` agent for automated test generation
 
 ## Future Enhancements
@@ -413,6 +508,9 @@ tail -f logs/csv-importer.log
 | `date.format` | application.properties | Date format pattern | yyyy-MM-dd |
 | `csv.delimiter` | application.properties | CSV delimiter | , |
 | `csv.files` | application.properties | Files to import | employee.csv |
+| `export.enabled` | application.properties | Enable CSV export | false |
+| `export.tables` | application.properties | Tables to export | (empty) |
+| `export.output.dir` | application.properties | Export output directory | src/main/resources/exported-csv |
 
 ## Contributing
 
