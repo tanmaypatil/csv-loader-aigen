@@ -250,23 +250,29 @@ public class CSVImporter {
                 pstmt.setBoolean(paramIndex, Boolean.parseBoolean(value));
             }
             else if (columnType.contains("date")) {
-                // Use configured date format
+                // Parse date using flexible parser (handles both date-only and full datetime)
+                // For DATE columns, only the date portion is stored
                 try {
-                    java.sql.Date sqlDate = dateConfig.toSqlDate(value);
+                    java.time.ZonedDateTime zonedDateTime = dateConfig.parseFlexible(value);
+                    java.sql.Date sqlDate = dateConfig.toSqlDate(zonedDateTime);
                     pstmt.setDate(paramIndex, sqlDate);
-                } catch (ParseException e) {
+                } catch (java.time.format.DateTimeParseException e) {
                     throw new SQLException("Invalid date format: " + value +
-                        ". Expected format: " + dateConfig.getDatePattern(), e);
+                        ". Expected format: " + dateConfig.getDatePattern() +
+                        " or yyyy-MM-dd (date-only, defaults to 00:00:00 UTC)", e);
                 }
             }
             else if (columnType.contains("timestamp")) {
-                // For timestamp, try to parse as date first
+                // Parse timestamp using flexible parser
+                // Supports full datetime format or date-only (which adds 00:00:00 UTC)
                 try {
-                    java.sql.Date sqlDate = dateConfig.toSqlDate(value);
-                    pstmt.setTimestamp(paramIndex, new java.sql.Timestamp(sqlDate.getTime()));
-                } catch (ParseException e) {
+                    java.time.ZonedDateTime zonedDateTime = dateConfig.parseFlexible(value);
+                    java.sql.Timestamp sqlTimestamp = dateConfig.toSqlTimestamp(zonedDateTime);
+                    pstmt.setTimestamp(paramIndex, sqlTimestamp);
+                } catch (java.time.format.DateTimeParseException e) {
                     throw new SQLException("Invalid timestamp format: " + value +
-                        ". Expected format: " + dateConfig.getDatePattern(), e);
+                        ". Expected format: " + dateConfig.getDatePattern() +
+                        " or yyyy-MM-dd (date-only, defaults to 00:00:00 UTC)", e);
                 }
             }
             else {

@@ -363,7 +363,7 @@ class CSVImporterTest {
 
         // Assert
         assertNotNull(datePattern, "Date pattern should not be null");
-        assertEquals("yyyy-MM-dd", datePattern, "Should use default date pattern");
+        assertEquals("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", datePattern, "Should use ISO 8601 datetime pattern");
     }
 
     @Test

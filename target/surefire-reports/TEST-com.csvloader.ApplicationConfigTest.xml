@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.csvloader.ApplicationConfigTest" time="0.091" tests="29" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.csvloader.ApplicationConfigTest" time="0.013" tests="29" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,10 +13,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251020233550354_3.jar /Users/tanmaypatil/csv-loader-aigen/target/surefire 2025-10-20T23-35-50_328-jvmRun1 surefire-20251020233550354_1tmp surefire_0-20251020233550354_2tmp"/>
+    <property name="sun.java.command" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251025192133822_3.jar /Users/tanmaypatil/csv-loader-aigen/target/surefire 2025-10-25T19-21-33_796-jvmRun1 surefire-20251025192133822_1tmp surefire_0-20251025192133822_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="ApplicationConfigTest"/>
     <property name="surefire.test.class.path" value="/Users/tanmaypatil/csv-loader-aigen/target/test-classes:/Users/tanmaypatil/csv-loader-aigen/target/classes:/Users/tanmaypatil/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/Users/tanmaypatil/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/tanmaypatil/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/tanmaypatil/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/tanmaypatil/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/tanmaypatil/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/tanmaypatil/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/tanmaypatil/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/tanmaypatil/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/tanmaypatil/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/tanmaypatil/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/tanmaypatil/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/tanmaypatil"/>
@@ -31,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251020233550354_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/tanmaypatil/csv-loader-aigen/target/surefire/surefirebooter-20251025192133822_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="25"/>
@@ -61,233 +60,233 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testGetDateFormat_returnsDefaultWhenNotConfigured" classname="com.csvloader.ApplicationConfigTest" time="0.005">
-    <system-out><![CDATA[2025-10-20 23:35:50.590 [main] INFO  com.csvloader.ApplicationConfigTest - ========== ApplicationConfigTest - BeforeAll Setup ==========
-2025-10-20 23:35:50.591 [main] INFO  com.csvloader.ApplicationConfigTest - Test properties loaded successfully
-2025-10-20 23:35:50.595 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetDateFormat_returnsDefaultWhenNotConfigured
-2025-10-20 23:35:50.595 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default date format: yyyy-MM-dd
-2025-10-20 23:35:50.596 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetDateFormat_returnsDefaultWhenNotConfigured
+  <testcase name="testGetDateFormat_returnsDefaultWhenNotConfigured" classname="com.csvloader.ApplicationConfigTest" time="0.001">
+    <system-out><![CDATA[2025-10-25 19:21:34.408 [main] INFO  com.csvloader.ApplicationConfigTest - ========== ApplicationConfigTest - BeforeAll Setup ==========
+2025-10-25 19:21:34.408 [main] INFO  com.csvloader.ApplicationConfigTest - Test properties loaded successfully
+2025-10-25 19:21:34.409 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetDateFormat_returnsDefaultWhenNotConfigured
+2025-10-25 19:21:34.409 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default date format: yyyy-MM-dd
+2025-10-25 19:21:34.409 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetDateFormat_returnsDefaultWhenNotConfigured
 ]]></system-out>
   </testcase>
-  <testcase name="testGetCsvFiles_multipleFiles" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.598 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_multipleFiles
-2025-10-20 23:35:50.599 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv, salary.csv]
-2025-10-20 23:35:50.599 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying multiple CSV files: [employee.csv, department.csv, salary.csv]
-2025-10-20 23:35:50.599 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_multipleFiles
+  <testcase name="testGetCsvFiles_multipleFiles" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.409 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_multipleFiles
+2025-10-25 19:21:34.409 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv, salary.csv]
+2025-10-25 19:21:34.409 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying multiple CSV files: [employee.csv, department.csv, salary.csv]
+2025-10-25 19:21:34.409 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_multipleFiles
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvDelimiter_returnsConfiguredValue" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.600 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_returnsConfiguredValue
-2025-10-20 23:35:50.600 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.600 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.600 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.600 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.600 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV delimiter: ,
-2025-10-20 23:35:50.600 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_returnsConfiguredValue
+    <system-out><![CDATA[2025-10-25 19:21:34.410 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_returnsConfiguredValue
+2025-10-25 19:21:34.410 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.410 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.410 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.410 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.410 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV delimiter: ,
+2025-10-25 19:21:34.410 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_returnsConfiguredValue
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvHasHeader_returnsConfiguredValue" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.601 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvHasHeader_returnsConfiguredValue
-2025-10-20 23:35:50.601 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.601 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.601 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.601 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.601 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV has header: true
-2025-10-20 23:35:50.601 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvHasHeader_returnsConfiguredValue
+    <system-out><![CDATA[2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvHasHeader_returnsConfiguredValue
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV has header: true
+2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvHasHeader_returnsConfiguredValue
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvFiles_complexFilenames" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.602 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_complexFilenames
-2025-10-20 23:35:50.602 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee_2024.csv, dept-info.csv, salary_data_final.csv]
-2025-10-20 23:35:50.602 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying complex filenames: [employee_2024.csv, dept-info.csv, salary_data_final.csv]
-2025-10-20 23:35:50.602 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_complexFilenames
+    <system-out><![CDATA[2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_complexFilenames
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee_2024.csv, dept-info.csv, salary_data_final.csv]
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying complex filenames: [employee_2024.csv, dept-info.csv, salary_data_final.csv]
+2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_complexFilenames
 ]]></system-out>
   </testcase>
   <testcase name="testEmptyProperties_allDefaults" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.603 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testEmptyProperties_allDefaults
-2025-10-20 23:35:50.603 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying all default values
-2025-10-20 23:35:50.603 [main] WARN  com.csvloader.ApplicationConfig - No CSV files configured in csv.files property
-2025-10-20 23:35:50.603 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testEmptyProperties_allDefaults
+    <system-out><![CDATA[2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testEmptyProperties_allDefaults
+2025-10-25 19:21:34.411 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying all default values
+2025-10-25 19:21:34.411 [main] WARN  com.csvloader.ApplicationConfig - No CSV files configured in csv.files property
+2025-10-25 19:21:34.411 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testEmptyProperties_allDefaults
 ]]></system-out>
   </testcase>
-  <testcase name="testGetCsvFiles_leadingComma" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.603 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_leadingComma
-2025-10-20 23:35:50.603 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv]
-2025-10-20 23:35:50.604 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying files with leading comma: [employee.csv, department.csv]
-2025-10-20 23:35:50.604 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_leadingComma
+  <testcase name="testGetCsvFiles_leadingComma" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_leadingComma
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv]
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying files with leading comma: [employee.csv, department.csv]
+2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_leadingComma
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvFiles_notConfigured" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.604 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_notConfigured
-2025-10-20 23:35:50.604 [main] WARN  com.csvloader.ApplicationConfig - No CSV files configured in csv.files property
-2025-10-20 23:35:50.604 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying unconfigured CSV files list: []
-2025-10-20 23:35:50.604 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_notConfigured
+    <system-out><![CDATA[2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_notConfigured
+2025-10-25 19:21:34.412 [main] WARN  com.csvloader.ApplicationConfig - No CSV files configured in csv.files property
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying unconfigured CSV files list: []
+2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_notConfigured
 ]]></system-out>
   </testcase>
   <testcase name="testGetPropertyWithDefault_nonExistentKey" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.605 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetPropertyWithDefault_nonExistentKey
-2025-10-20 23:35:50.605 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.605 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.605 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.605 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.605 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default value for nonexistent property: default-value
-2025-10-20 23:35:50.605 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetPropertyWithDefault_nonExistentKey
+    <system-out><![CDATA[2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetPropertyWithDefault_nonExistentKey
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.412 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default value for nonexistent property: default-value
+2025-10-25 19:21:34.412 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetPropertyWithDefault_nonExistentKey
 ]]></system-out>
   </testcase>
-  <testcase name="testGetCsvFiles_withWhitespace" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.605 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_withWhitespace
-2025-10-20 23:35:50.606 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv, salary.csv]
-2025-10-20 23:35:50.606 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV files with trimmed whitespace: [employee.csv, department.csv, salary.csv]
-2025-10-20 23:35:50.606 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_withWhitespace
+  <testcase name="testGetCsvFiles_withWhitespace" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.413 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_withWhitespace
+2025-10-25 19:21:34.413 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv, salary.csv]
+2025-10-25 19:21:34.413 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV files with trimmed whitespace: [employee.csv, department.csv, salary.csv]
+2025-10-25 19:21:34.413 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_withWhitespace
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvFiles_singleFileWithTrailingComma" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.606 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_singleFileWithTrailingComma
-2025-10-20 23:35:50.606 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
-2025-10-20 23:35:50.606 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying files with trailing comma: [employee.csv]
-2025-10-20 23:35:50.606 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_singleFileWithTrailingComma
+    <system-out><![CDATA[2025-10-25 19:21:34.413 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_singleFileWithTrailingComma
+2025-10-25 19:21:34.413 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
+2025-10-25 19:21:34.413 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying files with trailing comma: [employee.csv]
+2025-10-25 19:21:34.413 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_singleFileWithTrailingComma
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvDelimiter_customDelimiter" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.607 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_customDelimiter
-2025-10-20 23:35:50.607 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying custom delimiter: |
-2025-10-20 23:35:50.607 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_customDelimiter
+    <system-out><![CDATA[2025-10-25 19:21:34.413 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_customDelimiter
+2025-10-25 19:21:34.413 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying custom delimiter: |
+2025-10-25 19:21:34.413 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_customDelimiter
 ]]></system-out>
   </testcase>
   <testcase name="testGetDateFormat_customFormat" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.607 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetDateFormat_customFormat
-2025-10-20 23:35:50.607 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying custom date format: dd/MM/yyyy HH:mm:ss
-2025-10-20 23:35:50.608 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetDateFormat_customFormat
+    <system-out><![CDATA[2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetDateFormat_customFormat
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying custom date format: dd/MM/yyyy HH:mm:ss
+2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetDateFormat_customFormat
 ]]></system-out>
   </testcase>
-  <testcase name="testGetDateFormat_returnsConfiguredValue" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.608 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetDateFormat_returnsConfiguredValue
-2025-10-20 23:35:50.608 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.608 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.608 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.608 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.608 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying date format: yyyy-MM-dd
-2025-10-20 23:35:50.608 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetDateFormat_returnsConfiguredValue
+  <testcase name="testGetDateFormat_returnsConfiguredValue" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetDateFormat_returnsConfiguredValue
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying date format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetDateFormat_returnsConfiguredValue
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvFiles_withEmptyEntries" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.609 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_withEmptyEntries
-2025-10-20 23:35:50.609 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv, salary.csv]
-2025-10-20 23:35:50.609 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV files with empty entries filtered: [employee.csv, department.csv, salary.csv]
-2025-10-20 23:35:50.609 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_withEmptyEntries
+    <system-out><![CDATA[2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_withEmptyEntries
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv, department.csv, salary.csv]
+2025-10-25 19:21:34.414 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV files with empty entries filtered: [employee.csv, department.csv, salary.csv]
+2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_withEmptyEntries
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvDelimiter_returnsDefaultWhenNotConfigured" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.609 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_returnsDefaultWhenNotConfigured
-2025-10-20 23:35:50.610 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default CSV delimiter: ,
-2025-10-20 23:35:50.610 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_returnsDefaultWhenNotConfigured
+    <system-out><![CDATA[2025-10-25 19:21:34.414 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_returnsDefaultWhenNotConfigured
+2025-10-25 19:21:34.415 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default CSV delimiter: ,
+2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_returnsDefaultWhenNotConfigured
 ]]></system-out>
   </testcase>
   <testcase name="testLoadConfiguration_missingFile" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.610 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testLoadConfiguration_missingFile
-2025-10-20 23:35:50.610 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying that missing configuration file throws IOException
-2025-10-20 23:35:50.610 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testLoadConfiguration_missingFile (behavioral documentation)
+    <system-out><![CDATA[2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testLoadConfiguration_missingFile
+2025-10-25 19:21:34.415 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying that missing configuration file throws IOException
+2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testLoadConfiguration_missingFile (behavioral documentation)
 ]]></system-out>
   </testcase>
-  <testcase name="testGetCsvHasHeader_returnsDefaultWhenNotConfigured" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.611 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvHasHeader_returnsDefaultWhenNotConfigured
-2025-10-20 23:35:50.611 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default has header: true
-2025-10-20 23:35:50.611 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvHasHeader_returnsDefaultWhenNotConfigured
+  <testcase name="testGetCsvHasHeader_returnsDefaultWhenNotConfigured" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvHasHeader_returnsDefaultWhenNotConfigured
+2025-10-25 19:21:34.415 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying default has header: true
+2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvHasHeader_returnsDefaultWhenNotConfigured
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvFiles_emptyString" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.611 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_emptyString
-2025-10-20 23:35:50.611 [main] WARN  com.csvloader.ApplicationConfig - No CSV files configured in csv.files property
-2025-10-20 23:35:50.611 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying empty CSV files list: []
-2025-10-20 23:35:50.611 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_emptyString
+    <system-out><![CDATA[2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_emptyString
+2025-10-25 19:21:34.415 [main] WARN  com.csvloader.ApplicationConfig - No CSV files configured in csv.files property
+2025-10-25 19:21:34.415 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying empty CSV files list: []
+2025-10-25 19:21:34.415 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_emptyString
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvHasHeader_falseValue" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.612 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvHasHeader_falseValue
-2025-10-20 23:35:50.612 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying has header is false: false
-2025-10-20 23:35:50.612 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvHasHeader_falseValue
+    <system-out><![CDATA[2025-10-25 19:21:34.416 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvHasHeader_falseValue
+2025-10-25 19:21:34.416 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying has header is false: false
+2025-10-25 19:21:34.416 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvHasHeader_falseValue
 ]]></system-out>
   </testcase>
-  <testcase name="testGetCsvFiles_singleFile" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.612 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_singleFile
-2025-10-20 23:35:50.612 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.612 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.613 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV files list: [employee.csv]
-2025-10-20 23:35:50.613 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_singleFile
+  <testcase name="testGetCsvFiles_singleFile" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.417 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvFiles_singleFile
+2025-10-25 19:21:34.417 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.417 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.417 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.417 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.417 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
+2025-10-25 19:21:34.417 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying CSV files list: [employee.csv]
+2025-10-25 19:21:34.417 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvFiles_singleFile
 ]]></system-out>
   </testcase>
-  <testcase name="testPropertyGetters_consistentBehavior" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.613 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testPropertyGetters_consistentBehavior
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.613 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
-2025-10-20 23:35:50.613 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying consistent behavior across multiple calls
-2025-10-20 23:35:50.613 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testPropertyGetters_consistentBehavior
+  <testcase name="testPropertyGetters_consistentBehavior" classname="com.csvloader.ApplicationConfigTest" time="0.001">
+    <system-out><![CDATA[2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testPropertyGetters_consistentBehavior
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [employee.csv]
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying consistent behavior across multiple calls
+2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testPropertyGetters_consistentBehavior
 ]]></system-out>
   </testcase>
   <testcase name="testGetPropertyWithDefault_existingKey" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.614 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetPropertyWithDefault_existingKey
-2025-10-20 23:35:50.614 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.614 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.614 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.614 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.614 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying property with default: date.format = yyyy-MM-dd
-2025-10-20 23:35:50.614 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetPropertyWithDefault_existingKey
+    <system-out><![CDATA[2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetPropertyWithDefault_existingKey
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying property with default: date.format = yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetPropertyWithDefault_existingKey
 ]]></system-out>
   </testcase>
   <testcase name="testGetProperty_nonExistentKey" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.614 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetProperty_nonExistentKey
-2025-10-20 23:35:50.614 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.615 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.615 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.615 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.615 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying nonexistent property: null
-2025-10-20 23:35:50.615 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetProperty_nonExistentKey
+    <system-out><![CDATA[2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetProperty_nonExistentKey
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.418 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.418 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.419 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying nonexistent property: null
+2025-10-25 19:21:34.419 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetProperty_nonExistentKey
 ]]></system-out>
   </testcase>
   <testcase name="testGetCsvDelimiter_tabDelimiter" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.615 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_tabDelimiter
-2025-10-20 23:35:50.615 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying tab delimiter
-2025-10-20 23:35:50.615 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_tabDelimiter
+    <system-out><![CDATA[2025-10-25 19:21:34.419 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_tabDelimiter
+2025-10-25 19:21:34.419 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying tab delimiter
+2025-10-25 19:21:34.419 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_tabDelimiter
 ]]></system-out>
   </testcase>
   <testcase name="testConstructor_loadsConfigurationSuccessfully" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.616 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testConstructor_loadsConfigurationSuccessfully
-2025-10-20 23:35:50.616 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.616 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.616 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.616 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.616 [main] DEBUG com.csvloader.ApplicationConfigTest - ApplicationConfig instantiated successfully
-2025-10-20 23:35:50.616 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testConstructor_loadsConfigurationSuccessfully
+    <system-out><![CDATA[2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testConstructor_loadsConfigurationSuccessfully
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfigTest - ApplicationConfig instantiated successfully
+2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testConstructor_loadsConfigurationSuccessfully
 ]]></system-out>
   </testcase>
-  <testcase name="testConstructorWithCustomProperties" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.617 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testConstructorWithCustomProperties
-2025-10-20 23:35:50.617 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying custom properties constructor
-2025-10-20 23:35:50.617 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [test1.csv, test2.csv]
-2025-10-20 23:35:50.617 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testConstructorWithCustomProperties
+  <testcase name="testConstructorWithCustomProperties" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testConstructorWithCustomProperties
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying custom properties constructor
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfig - Configured CSV files: [test1.csv, test2.csv]
+2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testConstructorWithCustomProperties
 ]]></system-out>
   </testcase>
-  <testcase name="testGetCsvDelimiter_semicolonDelimiter" classname="com.csvloader.ApplicationConfigTest" time="0.0">
-    <system-out><![CDATA[2025-10-20 23:35:50.617 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_semicolonDelimiter
-2025-10-20 23:35:50.617 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying semicolon delimiter: ;
-2025-10-20 23:35:50.617 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_semicolonDelimiter
+  <testcase name="testGetCsvDelimiter_semicolonDelimiter" classname="com.csvloader.ApplicationConfigTest" time="0.001">
+    <system-out><![CDATA[2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetCsvDelimiter_semicolonDelimiter
+2025-10-25 19:21:34.420 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying semicolon delimiter: ;
+2025-10-25 19:21:34.420 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetCsvDelimiter_semicolonDelimiter
 ]]></system-out>
   </testcase>
-  <testcase name="testGetProperty_existingKey" classname="com.csvloader.ApplicationConfigTest" time="0.001">
-    <system-out><![CDATA[2025-10-20 23:35:50.618 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetProperty_existingKey
-2025-10-20 23:35:50.618 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
-2025-10-20 23:35:50.618 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
-2025-10-20 23:35:50.618 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
-2025-10-20 23:35:50.618 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
-2025-10-20 23:35:50.618 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying property retrieval: date.format = yyyy-MM-dd
-2025-10-20 23:35:50.618 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetProperty_existingKey
+  <testcase name="testGetProperty_existingKey" classname="com.csvloader.ApplicationConfigTest" time="0.0">
+    <system-out><![CDATA[2025-10-25 19:21:34.421 [main] INFO  com.csvloader.ApplicationConfigTest - Starting test: testGetProperty_existingKey
+2025-10-25 19:21:34.421 [main] DEBUG com.csvloader.ApplicationConfig - Initializing ApplicationConfig
+2025-10-25 19:21:34.421 [main] DEBUG com.csvloader.ApplicationConfig - Loading configuration from application.properties
+2025-10-25 19:21:34.421 [main] DEBUG com.csvloader.ApplicationConfig - Configuration loaded successfully
+2025-10-25 19:21:34.421 [main] INFO  com.csvloader.ApplicationConfig - ApplicationConfig initialized successfully
+2025-10-25 19:21:34.421 [main] DEBUG com.csvloader.ApplicationConfigTest - Verifying property retrieval: date.format = yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+2025-10-25 19:21:34.421 [main] INFO  com.csvloader.ApplicationConfigTest - Test completed: testGetProperty_existingKey
 ]]></system-out>
   </testcase>
 </testsuite>

@@ -76,7 +76,7 @@ class ApplicationConfigTest {
 
         // Assert
         assertNotNull(dateFormat, "Date format should not be null");
-        assertEquals("yyyy-MM-dd", dateFormat, "Date format should match configured value");
+        assertEquals("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", dateFormat, "Date format should match configured value");
 
         logger.info("Test completed: testGetDateFormat_returnsConfiguredValue");
     }
@@ -94,6 +94,7 @@ class ApplicationConfigTest {
         logger.debug("Verifying default date format: {}", dateFormat);
 
         // Assert
+        // Note: Default is still yyyy-MM-dd for backward compatibility
         assertEquals("yyyy-MM-dd", dateFormat, "Should return default date format");
 
         logger.info("Test completed: testGetDateFormat_returnsDefaultWhenNotConfigured");
@@ -346,7 +347,7 @@ class ApplicationConfigTest {
 
         // Assert
         assertNotNull(dateFormat, "Property should exist");
-        assertEquals("yyyy-MM-dd", dateFormat, "Should return configured value");
+        assertEquals("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", dateFormat, "Should return configured value");
 
         logger.info("Test completed: testGetProperty_existingKey");
     }
@@ -380,7 +381,7 @@ class ApplicationConfigTest {
         logger.debug("Verifying property with default: date.format = {}", dateFormat);
 
         // Assert
-        assertEquals("yyyy-MM-dd", dateFormat, "Should return configured value, not default");
+        assertEquals("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", dateFormat, "Should return configured value, not default");
 
         logger.info("Test completed: testGetPropertyWithDefault_existingKey");
     }
