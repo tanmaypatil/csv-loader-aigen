@@ -103,6 +103,50 @@ public class CSVImporterApp {
                 System.exit(2);
             }
 
+            // Export table headers if configured
+            if (appConfig.getExportEnabled()) {
+                logger.info("Export is enabled, starting table header export");
+                System.out.println("\n========================================");
+                System.out.println("CSV Export:");
+                System.out.println("========================================");
+
+                List<String> tablesToExport = appConfig.getExportTables();
+                String outputDir = appConfig.getExportOutputDir();
+
+                if (tablesToExport.isEmpty()) {
+                    logger.warn("Export is enabled but no tables configured");
+                    System.out.println("  ! Warning: Export enabled but no tables configured");
+                    System.out.println("    Add export.tables property with comma-separated table names");
+                } else {
+                    logger.info("Exporting headers for {} tables to {}", tablesToExport.size(), outputDir);
+                    System.out.println("Exporting headers for " + tablesToExport.size() + " table(s):");
+                    tablesToExport.forEach(table -> System.out.println("  - " + table));
+                    System.out.println("Output directory: " + outputDir);
+
+                    try {
+                        CSVExporter exporter = new CSVExporter(dbConnection, appConfig.getCsvDelimiter());
+                        int exportedCount = exporter.exportTableHeaders(tablesToExport, outputDir);
+
+                        logger.info("Successfully exported {} table headers", exportedCount);
+                        System.out.println("\nExport Summary:");
+                        System.out.println("  Tables exported: " + exportedCount + "/" + tablesToExport.size());
+                        System.out.println("  Output location: " + outputDir);
+                        System.out.println("========================================");
+
+                        if (exportedCount < tablesToExport.size()) {
+                            logger.warn("Some tables failed to export");
+                        }
+
+                    } catch (IOException e) {
+                        logger.error("Export failed", e);
+                        System.err.println("  ✗ ERROR: Export failed");
+                        System.err.println("    " + e.getMessage());
+                    }
+                }
+            } else {
+                logger.debug("Export is disabled");
+            }
+
             logger.info("CSV Database Importer completed successfully");
             System.exit(0);
 
@@ -143,13 +187,19 @@ public class CSVImporterApp {
         System.out.println("  - CSV files location: src/main/resources/");
         System.out.println();
         System.out.println("application.properties:");
-        System.out.println("  - csv.files: Comma-separated list of CSV files to import");
-        System.out.println("  - date.format: Date format pattern (e.g., yyyy-MM-dd)");
-        System.out.println("  - csv.delimiter: CSV delimiter character");
+        System.out.println("  Import settings:");
+        System.out.println("    - csv.files: Comma-separated list of CSV files to import");
+        System.out.println("    - date.format: Date format pattern (e.g., yyyy-MM-dd)");
+        System.out.println("    - csv.delimiter: CSV delimiter character");
+        System.out.println("  Export settings:");
+        System.out.println("    - export.enabled: Enable CSV export (true/false)");
+        System.out.println("    - export.tables: Comma-separated list of tables to export");
+        System.out.println("    - export.output.dir: Output directory for exported CSV files");
         System.out.println();
         System.out.println("Notes:");
         System.out.println("  - Table name is derived from CSV filename (employee.csv -> employee table)");
         System.out.println("  - First row must contain column names");
         System.out.println("  - All CSV files must exist in src/main/resources/");
+        System.out.println("  - Export generates CSV files with column headers only");
     }
 }
